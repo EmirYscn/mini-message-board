@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/index.css" />
+    <title>Mini Message Board</title>
+  </head>
+  <body>
+    <nav>
+      <a href="/new">
+        <button class="btn new-btn">
+          <img src="/plus.svg" alt="" />New message
+        </button>
+      </a>
+      <span><%= title %></span>
+      <select name="message-op" id="message-op">
+        <option value="all">All messages</option>
+        <option value="recent">Recent</option>
+      </select>
+    </nav>
+    <div class="messages">
+      <% messages.map((message)=>{ %>
+      <div class="message-container">
+        <% if (message.avatar === 'male') { %>
+        <img src="/avatar-male.svg" alt="" />
+        <% } else { %>
+        <img src="/avatar-female.svg" alt="" />
+        <% } %>
+        <div class="message">
+          <h2><%=message.title %></h2>
+          <p>
+            message by <%=message.user %> - <%=message.added.toDateString() %>
+            <%=message.added.getUTCHours() %>:<% if
+            (message.added.getUTCMinutes() < 10)
+            {%>0<%=message.added.getUTCMinutes()%> <% } else {
+            %><%=message.added.getUTCHours() %> <% } %>
+          </p>
+          <p><%=message.text %></p>
+          <p></p>
+        </div>
+      </div>
+      <% }) %>
+    </div>
+  </body>
+</html>
