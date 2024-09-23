@@ -4,18 +4,26 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="./form.css" />
   </head>
   <body>
     <h1>New Message</h1>
-    <form method="post" action="/new">
-      <label for="author">Author</label>
-      <input type="text" name="author" id="author" />
-      <label for="title">Title</label>
-      <input type="text" name="title" id="title" />
-      <label for="message">Message</label>
-      <textarea name="message" id="message"></textarea>
-
+    <form method="post" action="/new" id="form" class="topBefore">
+      <input id="title" name="title" type="text" placeholder="TITLE" required />
+      <input
+        id="author"
+        name="author"
+        type="text"
+        placeholder="AUTHOR"
+        required
+      />
+      <textarea
+        id="message"
+        name="message"
+        type="text"
+        placeholder="MESSAGE"
+        required
+      ></textarea>
       <button type="submit">Send</button>
     </form>
   </body>
