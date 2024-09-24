@@ -22,22 +22,22 @@
     <div class="messages">
       <% messages.map((message)=>{ %>
       <div class="message-container">
-        <% if (message.avatar === 'male') { %>
-        <img src="/avatar-male.svg" alt="" />
-        <% } else { %>
-        <img src="/avatar-female.svg" alt="" />
-        <% } %>
+        <img src="/avatar-<%=message.avatar%>.svg" alt="" />
         <div class="message">
           <h2><%=message.title %></h2>
-          <p>
-            message by <%=message.user %> - <%=message.added.toDateString() %>
-            <%=message.added.getUTCHours() %>:<% if
-            (message.added.getUTCMinutes() < 10)
-            {%>0<%=message.added.getUTCMinutes()%> <% } else {
-            %><%=message.added.getUTCHours() %> <% } %>
-          </p>
+          <div>
+            <p>
+              message by <%=message.user %> - <%=message.added.toDateString() %>
+              <%=message.added.getUTCHours() %>:<% if
+              (message.added.getUTCMinutes() < 10)
+              {%>0<%=message.added.getUTCMinutes()%> <% } else {
+              %><%=message.added.getUTCHours() %> <% } %>
+            </p>
+            <a href="/message/<%=message.id%>"
+              ><button class="btn open-btn">open</button></a
+            >
+          </div>
           <p><%=message.text %></p>
-          <p></p>
         </div>
       </div>
       <% }) %>

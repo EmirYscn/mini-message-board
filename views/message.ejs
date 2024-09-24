@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/message.css" />
+    <title>Message from <%=message.user%></title>
+  </head>
+  <body>
+    <nav>
+      <a href="/">
+        <button class="btn back-btn">Back</button>
+      </a>
+      <div class="message-user">
+        <img src="/avatar-<%=message.avatar%>.svg" alt="" />
+        <span><%=message.user%></span>
+      </div>
+    </nav>
+    <div class="message">
+      <div>
+        <h1><%=message.title%></h1>
+        <p>
+          <%=message.added.toDateString() %> <%=message.added.getUTCHours()
+          %>:<% if (message.added.getUTCMinutes() < 10)
+          {%>0<%=message.added.getUTCMinutes()%> <% } else {
+          %><%=message.added.getUTCHours() %> <% } %>
+        </p>
+      </div>
+
+      <p><%=message.text%></p>
+    </div>
+    <div class="other-messages">
+      <% otherMessagesByUser.forEach((message)=>{ %>
+      <div class="other-message-container">
+        <div class="other-message">
+          <div>
+            <h2><%=message.title%></h2>
+            <p>
+              <%=message.added.toDateString() %> <%=message.added.getUTCHours()
+              %>:<% if (message.added.getUTCMinutes() < 10)
+              {%>0<%=message.added.getUTCMinutes()%> <% } else {
+              %><%=message.added.getUTCHours() %> <% } %>
+            </p>
+            <a href="/message/<%=message.id%>"
+              ><button class="btn open-btn">open</button></a
+            >
+          </div>
+          <p><%=message.text %></p>
+        </div>
+      </div>
+      <% }) %>
+    </div>
+  </body>
+</html>
