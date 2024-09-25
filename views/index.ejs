@@ -19,6 +19,7 @@
         <option value="recent">Recent</option>
       </select>
     </nav>
+
     <div class="messages">
       <% messages.map((message)=>{ %>
       <div class="message-container">
@@ -28,10 +29,10 @@
           <div>
             <p>
               message by <%=message.user %> - <%=message.added.toDateString() %>
-              <%=message.added.getUTCHours() %>:<% if
+              <%= message.added.getUTCHours() %>:<% if
               (message.added.getUTCMinutes() < 10)
-              {%>0<%=message.added.getUTCMinutes()%> <% } else {
-              %><%=message.added.getUTCHours() %> <% } %>
+              {%>0<%=message.added.getUTCMinutes() %> <%} else {%>
+              <%=message.added.getUTCMinutes()%> <% } %>
             </p>
             <a href="/message/<%=message.id%>"
               ><button class="btn open-btn">open</button></a

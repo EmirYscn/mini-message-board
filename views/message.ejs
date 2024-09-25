@@ -25,11 +25,16 @@
           {%>0<%=message.added.getUTCMinutes()%> <% } else {
           %><%=message.added.getUTCHours() %> <% } %>
         </p>
+        <a href="/new/<%=message.user%> "
+          ><button class="btn reply-btn">reply</button></a
+        >
       </div>
 
       <p><%=message.text%></p>
     </div>
     <div class="other-messages">
+      <% if (otherMessagesByUser.length !== 0) { %>
+      <h1>Other Messages by <%=message.user %></h1>
       <% otherMessagesByUser.forEach((message)=>{ %>
       <div class="other-message-container">
         <div class="other-message">
@@ -48,7 +53,7 @@
           <p><%=message.text %></p>
         </div>
       </div>
-      <% }) %>
+      <% }) %> <% } %>
     </div>
   </body>
 </html>

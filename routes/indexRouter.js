@@ -34,7 +34,10 @@ router.get("/", (req, res) => {
   res.render("index", { title: "Message Board", messages: messages });
 });
 router.get("/new", (req, res) => {
-  res.render("form");
+  res.render("form", { replyingTo: req.query.user || null });
+});
+router.get("/new/:user", (req, res) => {
+  res.render("form", { replyingTo: req.params.user || null });
 });
 router.get("/message/:id", (req, res) => {
   const messageId = req.params.id * 1;

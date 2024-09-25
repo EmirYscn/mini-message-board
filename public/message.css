@@ -117,3 +117,7 @@ img {
 .btn a:visited {
   /* color: white; */
 }
+
+.reply-btn {
+  padding: 0.5em 1em;
+}
