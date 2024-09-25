@@ -185,3 +185,24 @@ button:hover {
 h1 {
   text-align: center;
 }
+
+.btn {
+  padding: 1em 2em;
+  border-radius: 50px;
+  border-color: navajowhite;
+  border-style: none;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+  align-items: center;
+  transition: all 0.5s;
+  position: absolute;
+  width: max-content;
+  top: 3em;
+  left: 3em;
+}
+.btn:active {
+  transform: translateY(2px);
+}
+.btn:hover {
+  transform: scale(1.02);
+}
