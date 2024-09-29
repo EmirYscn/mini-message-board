@@ -199,6 +199,7 @@ h1 {
   width: max-content;
   top: 3em;
   left: 3em;
+  cursor: pointer;
 }
 .btn:active {
   transform: translateY(2px);
