@@ -28,9 +28,9 @@
           <h2><%=message.title %></h2>
           <div>
             <p>
-              message by <%=message.user %> - <%=message.added.toDateString() %>
-              <%= message.added.getUTCHours() %>:<% if
-              (message.added.getUTCMinutes() < 10)
+              message by <%=message.username %> -
+              <%=message.added.toDateString() %> <%= message.added.getUTCHours()
+              %>:<% if (message.added.getUTCMinutes() < 10)
               {%>0<%=message.added.getUTCMinutes() %> <%} else {%>
               <%=message.added.getUTCMinutes()%> <% } %>
             </p>

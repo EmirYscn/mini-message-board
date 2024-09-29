@@ -13,7 +13,7 @@
       </a>
       <div class="message-user">
         <img src="/avatar-<%=message.avatar%>.svg" alt="" />
-        <span><%=message.user%></span>
+        <span><%=message.username%></span>
       </div>
     </nav>
     <div class="message">
@@ -25,7 +25,7 @@
           {%>0<%=message.added.getUTCMinutes()%> <% } else {
           %><%=message.added.getUTCHours() %> <% } %>
         </p>
-        <a href="/new/<%=message.user%> "
+        <a href="/new/<%=message.username%> "
           ><button class="btn reply-btn">reply</button></a
         >
       </div>
@@ -34,7 +34,7 @@
     </div>
     <div class="other-messages">
       <% if (otherMessagesByUser.length !== 0) { %>
-      <h1>Other Messages by <%=message.user %></h1>
+      <h1>Other Messages by <%=message.username %></h1>
       <% otherMessagesByUser.forEach((message)=>{ %>
       <div class="other-message-container">
         <div class="other-message">
