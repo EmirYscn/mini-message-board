@@ -29,10 +29,11 @@
           <div>
             <p>
               message by <%=message.username %> -
-              <%=message.added.toDateString() %> <%= message.added.getUTCHours()
-              %>:<% if (message.added.getUTCMinutes() < 10)
-              {%>0<%=message.added.getUTCMinutes() %> <%} else {%>
-              <%=message.added.getUTCMinutes()%> <% } %>
+              <%=message.created_at.toDateString() %> <%=
+              message.created_at.getUTCHours() %>:<% if
+              (message.created_at.getUTCMinutes() < 10)
+              {%>0<%=message.created_at.getUTCMinutes() %> <%} else {%>
+              <%=message.created_at.getUTCMinutes()%> <% } %>
             </p>
             <a href="/message/<%=message.id%>"
               ><button class="btn open-btn">open</button></a

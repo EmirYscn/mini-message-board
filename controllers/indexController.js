@@ -2,6 +2,7 @@ const db = require("../db/queries");
 
 async function getMessages(req, res) {
   const messages = await db.getAllMessages();
+  console.log(messages);
   res.render("index", { title: "Message Board", messages });
 }
 async function createMessageGet(req, res) {
@@ -15,8 +16,7 @@ async function createMessagePost(req, res) {
       "male",
       message.title,
       message.message,
-      message.author.charAt(0).toUpperCase() + req.body.author.slice(1),
-      new Date()
+      message.author.charAt(0).toUpperCase() + req.body.author.slice(1)
     );
   } catch (error) {
     console.log(error);

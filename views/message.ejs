@@ -20,10 +20,11 @@
       <div>
         <h1><%=message.title%></h1>
         <p>
-          <%=message.added.toDateString() %> <%=message.added.getUTCHours()
-          %>:<% if (message.added.getUTCMinutes() < 10)
-          {%>0<%=message.added.getUTCMinutes()%> <% } else {
-          %><%=message.added.getUTCHours() %> <% } %>
+          <%=message.created_at.toDateString() %>
+          <%=message.created_at.getUTCHours() %>:<% if
+          (message.created_at.getUTCMinutes() < 10)
+          {%>0<%=message.created_at.getUTCMinutes()%> <% } else {
+          %><%=message.created_at.getUTCHours() %> <% } %>
         </p>
         <a href="/new/<%=message.username%> "
           ><button class="btn reply-btn">reply</button></a
@@ -41,10 +42,11 @@
           <div>
             <h2><%=message.title%></h2>
             <p>
-              <%=message.added.toDateString() %> <%=message.added.getUTCHours()
-              %>:<% if (message.added.getUTCMinutes() < 10)
-              {%>0<%=message.added.getUTCMinutes()%> <% } else {
-              %><%=message.added.getUTCHours() %> <% } %>
+              <%=message.created_at.toDateString() %>
+              <%=message.created_at.getUTCHours() %>:<% if
+              (message.created_at.getUTCMinutes() < 10)
+              {%>0<%=message.created_at.getUTCMinutes()%> <% } else {
+              %><%=message.created_at.getUTCHours() %> <% } %>
             </p>
             <a href="/message/<%=message.id%>"
               ><button class="btn open-btn">open</button></a
