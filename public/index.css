@@ -29,6 +29,12 @@ html {
   background: #e2dedb;
 }
 
+header {
+  padding: 2em;
+  padding-bottom: 0;
+  text-align: center;
+}
+
 a {
   text-decoration: none;
 }
@@ -36,7 +42,6 @@ a {
 body {
   display: flex;
   flex-direction: column;
-  /* align-items: center; */
   min-height: 100vh;
   padding: 0 2em;
   gap: 1em;
@@ -49,7 +54,7 @@ nav {
   position: relative;
   display: flex;
   justify-content: space-between;
-  grid-template-columns: auto 1fr auto;
+  gap: 1em;
   width: 100%;
   padding: 2em;
   text-align: center;
@@ -61,10 +66,6 @@ nav img {
 nav span {
   font-size: 2em;
   font-weight: bold;
-  position: absolute; /* Position it absolutely */
-  top: 50%; /* Position from the top */
-  left: 50%; /* Position from the left */
-  transform: translate(-50%, -50%);
 }
 nav .forms {
   display: flex;
@@ -203,4 +204,80 @@ nav input:focus {
   text-align: center;
   border: 2px dashed rgba(21, 20, 20, 0.193);
   padding: 1.5em;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 1200px) {
+  .messages {
+    padding: 1em 1em;
+  }
+  nav {
+    flex-direction: column; /* Stack navigation elements vertically */
+    padding: 1em;
+    gap: 1em;
+    flex-wrap: wrap;
+  }
+  .forms {
+    justify-content: center;
+  }
+}
+@media (max-width: 768px) {
+  html {
+    padding: 2em 1em; /* Reduce padding on smaller screens */
+  }
+
+  nav {
+    flex-direction: column; /* Stack navigation elements vertically */
+    padding: 1em;
+    gap: 1em;
+    align-items: center;
+  }
+  nav span {
+    position: relative;
+    top: 0;
+    left: 0;
+    transform: none;
+  }
+
+  nav .forms {
+    flex-direction: column; /* Stack forms vertically */
+    width: 100%; /* Full width for forms */
+    gap: 0.5em;
+  }
+
+  nav select,
+  nav input {
+    width: 100%; /* Full width for inputs on mobile */
+  }
+
+  .messages {
+    padding: 1em; /* Reduce padding for messages */
+  }
+
+  .message-container {
+    grid-template-columns: 1fr; /* Stack images and messages vertically */
+  }
+}
+
+@media (max-width: 480px) {
+  nav span {
+    font-size: 1.5em; /* Reduce font size for titles on smaller screens */
+  }
+
+  .btn {
+    padding: 0.5em; /* Reduce button padding on smaller screens */
+    font-size: 0.9em; /* Slightly smaller font size */
+  }
+
+  .messages {
+    gap: 1em; /* Adjust gap between messages */
+  }
+
+  .message-container {
+    padding: 0.5em; /* Reduce padding in message containers */
+  }
+
+  .message h2 {
+    font-size: 1.2em; /* Adjust title size */
+  }
 }
