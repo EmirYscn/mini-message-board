@@ -1,9 +1,15 @@
 const db = require("../db/queries");
 
 async function getMessages(req, res) {
-  const messages = await db.getAllMessages();
-  console.log(messages);
-  res.render("index", { title: "Message Board", messages });
+  const { sort = "all", username = "" } = req.query;
+  try {
+    // const messages = await db.getMessagesSortedBy(sort);
+    const messages = await db.getMessages(req.query);
+    res.render("index", { title: "Message Board", messages, sort, username });
+  } catch (error) {
+    console.error("Error fetching messages:", error);
+    res.status(500).send("An error occurred while fetching messages");
+  }
 }
 async function createMessageGet(req, res) {
   res.render("form", { replyingTo: req.query.user || null });

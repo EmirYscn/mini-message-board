@@ -14,12 +14,25 @@
         </button>
       </a>
       <span><%= title %></span>
-      <select name="message-op" id="message-op">
-        <option value="all">All messages</option>
-        <option value="recent">Recent</option>
-      </select>
-    </nav>
+      <div class="forms">
+        <!-- Search Form -->
+        <form method="GET" action="/" id="searchForm">
+          <input type="search" name="username" id="username" value="<%= username %>" placeholder="Search by username">
+        </form>
 
+        <!-- Sort Form -->
+        <form method="GET" action="/" id="sortForm" onchange="this.submit()">
+          <input type="hidden" name="username" value="<%= username %>"> <!-- Preserve username in sorting form -->
+          <select name="sort" id="sort">
+              <option value="all" <%= sort === 'all' ? 'selected' : '' %>>All messages</option>
+              <option value="recent" <%= sort === 'recent' ? 'selected' : '' %>>Recent</option>
+              <option value="title" <%= sort === 'title' ? 'selected' : '' %>>Title</option>
+              <option value="username" <%= sort === 'username' ? 'selected' : '' %>>Name</option>
+          </select>
+        </form>
+      </div>
+    </nav>
+    <%- include("partials/notFoundUser.ejs") %>
     <div class="messages">
       <% messages.map((message)=>{ %>
       <div class="message-container">

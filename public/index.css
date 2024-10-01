@@ -46,7 +46,9 @@ body {
 }
 
 nav {
-  display: grid;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
   grid-template-columns: auto 1fr auto;
   width: 100%;
   padding: 2em;
@@ -59,6 +61,14 @@ nav img {
 nav span {
   font-size: 2em;
   font-weight: bold;
+  position: absolute; /* Position it absolutely */
+  top: 50%; /* Position from the top */
+  left: 50%; /* Position from the left */
+  transform: translate(-50%, -50%);
+}
+nav .forms {
+  display: flex;
+  gap: 1em;
 }
 img {
   height: 3em;
@@ -159,4 +169,38 @@ nav option {
   background-color: #fff; /* White background for options */
   color: #333; /* Text color for options */
   padding: 10px; /* Padding inside the option elements */
+}
+
+nav input {
+  width: 200px;
+  padding: 10px 15px;
+  border-radius: 25px;
+  border: 1px solid #ccc;
+  background-color: #f9f9f9;
+  font-size: 1em;
+  color: #333;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.3s ease;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+}
+
+/* Change border and background on hover */
+nav input:hover {
+  border-color: #888; /* Darker border on hover */
+  background-color: #fff; /* White background on hover */
+}
+
+/* Style for focus (when user selects the dropdown) */
+nav input:focus {
+  border-color: #555; /* Darker border on focus */
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); /* Slight shadow on focus */
+}
+
+.notFoundUser {
+  margin-top: 1em;
+  text-align: center;
+  border: 2px dashed rgba(21, 20, 20, 0.193);
+  padding: 1.5em;
 }
