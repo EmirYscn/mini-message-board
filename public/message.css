@@ -27,16 +27,20 @@ body {
 }
 
 nav {
-  display: grid;
-  grid-template-columns: auto 1fr auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   width: 100%;
   padding: 2em;
-  text-align: center;
+  /* text-align: center; */
   border-bottom: 1px solid gray;
   align-items: center;
 }
 nav img {
   height: 4em;
+}
+nav a {
+  align-self: flex-start;
 }
 nav span {
   font-size: 2em;
@@ -121,4 +125,63 @@ img {
 
 .reply-btn {
   padding: 0.5em 1em;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 1200px) {
+  .message {
+    padding: 1em 1em;
+  }
+  .other-messages {
+    padding: 1em;
+  }
+  nav {
+    flex-direction: column; /* Stack navigation elements vertically */
+    padding: 1em;
+    gap: 1em;
+    flex-wrap: wrap;
+  }
+}
+@media (max-width: 768px) {
+  html {
+    padding: 2em 1em; /* Reduce padding on smaller screens */
+  }
+
+  nav {
+    flex-direction: column; /* Stack navigation elements vertically */
+    padding: 1em;
+    gap: 1em;
+    align-items: center;
+  }
+  nav span {
+    position: relative;
+    top: 0;
+    left: 0;
+    transform: none;
+  }
+
+  .message {
+    padding: 1em; /* Reduce padding for messages */
+  }
+  .other-messages {
+    padding: 1em;
+  }
+}
+
+@media (max-width: 480px) {
+  nav span {
+    font-size: 1.5em; /* Reduce font size for titles on smaller screens */
+  }
+
+  .btn {
+    padding: 0.5em; /* Reduce button padding on smaller screens */
+    font-size: 0.9em; /* Slightly smaller font size */
+  }
+
+  .message {
+    padding: 1em; /* Adjust gap between messages */
+  }
+  .other-messages {
+    padding: 1em;
+  }
 }

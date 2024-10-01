@@ -94,6 +94,7 @@ body {
   font-family: "Lato", sans-serif;
   background: #e2dedb;
   color: #b3aca7;
+  padding: 5em;
 }
 
 header {
@@ -206,4 +207,43 @@ h1 {
 }
 .btn:hover {
   transform: scale(1.02);
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  body {
+    padding: 1em;
+  }
+
+  #form {
+    padding: 1em;
+  }
+
+  input,
+  textarea {
+    font-size: 0.8em;
+  }
+
+  button {
+    font-size: 0.8em;
+  }
+}
+
+@media (max-width: 480px) {
+  #form {
+    padding: 0.5em;
+  }
+
+  input,
+  textarea {
+    font-size: 0.75em;
+  }
+
+  button {
+    font-size: 0.75em;
+  }
+
+  .btn {
+    font-size: 0.75em;
+  }
 }
