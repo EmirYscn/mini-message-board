@@ -38,6 +38,12 @@ header {
 a {
   text-decoration: none;
 }
+a,
+a:visited,
+a:hover,
+a:active {
+  color: inherit;
+}
 
 body {
   display: flex;
@@ -69,6 +75,7 @@ nav span {
 }
 nav .forms {
   display: flex;
+  align-items: center;
   gap: 1em;
 }
 img {
@@ -204,6 +211,10 @@ nav input:focus {
   text-align: center;
   border: 2px dashed rgba(21, 20, 20, 0.193);
   padding: 1.5em;
+}
+
+.errorMsg {
+  color: rgba(255, 0, 0, 0.557);
 }
 
 /* Media Queries for Responsiveness */

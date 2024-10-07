@@ -209,6 +209,10 @@ h1 {
   transform: scale(1.02);
 }
 
+.errorMsg {
+  color: rgba(255, 0, 0, 0.557);
+}
+
 /* Responsive styles */
 @media (max-width: 768px) {
   body {

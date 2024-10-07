@@ -4,11 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/index.css" />
+    <script src="dom-manipulate.js" defer></script>
     <title>Mini Message Board</title>
   </head>
   <body>
     <header>
-      <h1>Message Board</h1>
+      <a href="/"><h1>Message Board</h1></a>
     </header>
     <nav>
       <a href="/new">
@@ -18,6 +19,7 @@
       </a>
       <!-- <span><%= title %></span> -->
       <div class="forms">
+        <%- include("partials/errors.ejs") %>
         <!-- Search Form -->
         <form method="GET" action="/" id="searchForm">
           <input type="search" name="username" id="username" value="<%= username %>" placeholder="Search by username">

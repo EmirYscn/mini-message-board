@@ -12,13 +12,15 @@
     </a>
     <h1>New Message</h1>
     <form method="post" action="/new" id="form" class="topBefore">
-      <input id="title" name="title" type="text" placeholder="TITLE" required />
+      <%- include("partials/errors.ejs") %>
+      <input id="title" name="title" type="text" placeholder="TITLE" required value="<%= typeof title !== 'undefined' ? title : '' %>"/>
       <input
         id="author"
         name="author"
         type="text"
         placeholder="AUTHOR"
         required
+        value="<%= typeof author !== 'undefined' ? author : '' %>"
       />
       <textarea
         id="message"
@@ -26,9 +28,7 @@
         type="text"
         placeholder="MESSAGE"
         required
-      >
-<%=replyingTo ? `@${replyingTo}` : '' %></textarea
-      >
+      ><%=replyingTo ? `@${replyingTo}` : '' %><%= typeof message !== 'undefined' ? message : '' %></textarea>
       <button type="submit">Send</button>
     </form>
   </body>
